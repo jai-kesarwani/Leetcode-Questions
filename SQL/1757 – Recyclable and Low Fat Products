@@ -1,0 +1,15 @@
+// SQL Query for Leetcode question 1757 – Recyclable and Low Fat Products
+
+Select product_id 
+from Products
+where low_fats = "Y" AND recyclable = "Y";
+
+
+
+
+Output:
+
+| product_id |
+| ---------- |
+| 1          |
+| 3          |
