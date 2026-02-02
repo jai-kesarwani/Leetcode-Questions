@@ -1,0 +1,13 @@
+// SQL Query for Leetcode question 1683. Invalid Tweets
+
+SELECT tweet_id 
+From Tweets
+where CHAR_LENGTH(content) > 15;
+
+
+
+OUTPUT:
+
+| tweet_id |
+| -------- |
+| 2        |
