@@ -1,0 +1,22 @@
+// SQL Query for leetcode question 1873. Calculate Special Bonus
+
+SELECT employee_id , salary AS Bonus
+FROM employees
+WHERE employee_id%2!=0 AND name NOT LIKE "M%"
+UNION
+SELECT employee_id, 0 AS Bonus
+FROM employees
+WHERE employee_id%2=0 OR name LIKE "M%"
+ORDER BY employee_id;
+
+
+
+OUTPUT:
+
+| employee_id | name    | salary |
+| ----------- | ------- | ------ |
+| 2           | Meir    | 3000   |
+| 3           | Michael | 3800   |
+| 7           | Addilyn | 7400   |
+| 8           | Juan    | 6100   |
+| 9           | Kannon  | 7700   |
