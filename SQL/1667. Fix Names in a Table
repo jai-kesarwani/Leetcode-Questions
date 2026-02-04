@@ -5,7 +5,8 @@ CONCAT(
     UPPER(LEFT(name,1)),
     LOWER(Substring(name,2))
 ) AS name
-FROM USERS;
+FROM USERS
+ORDER BY user_id;
 
 
 OUTPUT:
