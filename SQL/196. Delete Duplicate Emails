@@ -1,0 +1,15 @@
+// SQL Query for leetcode question 196. Delete Duplicate Emails
+
+DELETE P1
+FROM PERSON P1
+JOIN PERSON P2
+WHERE P1.email = P2.email AND
+P1.id > P2.id;
+
+
+Output:
+
+| id | email            |
+| -- | ---------------- |
+| 1  | john@example.com |
+| 2  | bob@example.com  |
