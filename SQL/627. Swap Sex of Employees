@@ -1,0 +1,15 @@
+// SQL Query for leet code question 627
+
+UPDATE SALARY
+SET sex = IF(SEX='f','m','f')
+;
+
+
+OUTPUT:
+
+| id | name | sex | salary |
+| -- | ---- | --- | ------ |
+| 1  | A    | f   | 2500   |
+| 2  | B    | m   | 1500   |
+| 3  | C    | f   | 5500   |
+| 4  | D    | m   | 500    |
