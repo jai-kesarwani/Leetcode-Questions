@@ -1,0 +1,22 @@
+//SQL Query for 176. Second Highest Salary
+
+Select max(salary) as SecondHighestSalary 
+From Employee
+Where salary < (Select max(salary) 
+From Employee);
+
+
+
+Output:
+
+1.
+
+| SecondHighestSalary |
+| ------------------- |
+| 200                 |
+
+2. 
+
+| SecondHighestSalary |
+| ------------------- |
+| null                |
