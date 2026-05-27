@@ -1,0 +1,26 @@
+// Leetcode solution of question 1004. Max Consecutive ones III
+//Using sliding window
+
+class Solution {
+public:
+    int longestOnes(vector<int>& nums, int k) {
+        int low = 0;
+        int res = -1;
+        int zeros =0;
+        int n = nums.size();
+        for(int high=0;high<n;high++){
+            if(nums[high]==0)  // array's having 0
+                zeros++;
+
+            while(zeros>k){
+                if(nums[low]==0)     // shrink array if 0 is there
+                    zeros--;
+                low++;
+            }
+            int len = high-low+1;
+            res = max(len,res);
+        }
+
+        return res;
+    }
+};
