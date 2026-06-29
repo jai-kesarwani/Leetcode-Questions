@@ -1,0 +1,47 @@
+// Solution of leetcode question 76. Minimum Window Substring (Hard)
+//using sliding window pattern
+
+class Solution {
+public:
+    bool correct(vector<int> &have, vector<int> &need){
+        for(int i=0;i<256;i++){
+            if(have[i]<need[i])
+                return false;
+        }
+        return true;
+    }
+
+    string minWindow(string s, string t) {
+        int n = s.size();
+        int m = t.size();
+        vector<int> have(256,0);
+        vector<int> need(256,0);
+        int i;
+        if(n<m)
+            return "";
+
+        for(i=0;i<m;i++)
+            need[t[i]]++;
+        
+        int start=-1;
+        int res=INT_MAX;
+        int high=0,low=0;
+
+        for(int high=0;high<n;high++){
+            have[s[high]]++;
+            while(correct(have,need)){
+                int len=high-low+1;
+                if(res>len){
+                    res=len;
+                    start=low;
+                }
+                have[s[low]]--;
+                low++;
+            }      
+        }
+        if(res==INT_MAX)
+            return "";
+
+        return s.substr(start,res);
+    }
+};
